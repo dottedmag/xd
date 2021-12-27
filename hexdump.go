@@ -90,7 +90,7 @@ func Print(data []byte, offset int) (int, error) {
 	return fmt.Print(Sprint(data, offset))
 }
 
-// Print is a convenience function to format data like Sprint
+// Fprint is a convenience function to format data like Sprint
 // and print it to the passed writer.
 func Fprint(w io.Writer, data []byte, offset int) (int, error) {
 	builder := strings.Builder{}
