@@ -51,7 +51,7 @@ There is a trivial command-line tool:
 ## Credits
 
 Extended hexdump is invented by Ange Albertini in
-[Corkami](https://github.com/angea/corkami/blob/master/src/HexII/braille/braille-ange).
+[Corkami](https://github.com/angea/corkami/blob/master/src/HexII/braille/braille-ange)
 and implemented in [braille dump](https://justine.lol/braille/) by Justine Tunney.
 
 This implementation differs only in character used for NUL byte, as ▁ and ░ used
