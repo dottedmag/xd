@@ -1,5 +1,7 @@
 # Extended hexdump for Go
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/dottedmag/xd.svg)](https://pkg.go.dev/github.com/dottedmag/xd)
+
 This package implements extended hexdump designed for ease of recognition
 of patterns in binary data, while being a superset of classic `hexdump -C`.
 
