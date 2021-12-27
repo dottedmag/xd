@@ -1,31 +1,3 @@
-// Package xd implements extended hexdump designed for ease of recognition
-// of patterns in binary data, while being a superset of classic hexdump -C.
-//
-// Extended hexdump makes the structure of data stand out:
-//   00000000  01 00 00 00 01 00 0c 00  02 00 00 00              |☺▪▪▪☺▪♀▪☻▪▪▪|
-//
-//   00000000  01 00 00 00 00 00 24 00  01 00 00 00 03 00 00 00  |☺▪▪▪▪▪$▪☺▪▪▪♥▪▪▪|
-//   00000010  10 00 00 00 75 6e 6b 6e  6f 77 6e 20 72 65 71 75  |►▪▪▪unknown requ|
-//   00000020  65 73 74 00                                       |est▪|
-//
-// The format makes it obvious at a quick glance that the data is little-endian,
-// uses 4-byte and 2-byte integers and NUL-terminated strings.
-//
-// Compare to the classic hexdump -C:
-//   00000000  01 00 00 00 01 00 0c 00  02 00 00 00              |............|
-//
-//   00000000  01 00 00 00 00 00 24 00  01 00 00 00 03 00 00 00  |......$.........|
-//   00000010  10 00 00 00 75 6e 6b 6e  6f 77 6e 20 72 65 71 75  |....unknown requ|
-//   00000020  65 73 74 00                                       |est.|
-//
-// Extended hexdump is invented by Ange Albertini to use in Corkami
-// (https://github.com/angea/corkami/blob/master/src/HexII/braille/braille-ange),
-// and implemented in braille dump by Justine Tunney (https://justine.lol/braille/).
-//
-// This implementation differs only in character used for NUL byte, as ▁ and ░ used by
-// Justine and Ange are hard to count, being block characters. ▪ is perfectly suited
-// for NUL.
-//
 package xd
 
 import (
