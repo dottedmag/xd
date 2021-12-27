@@ -54,7 +54,7 @@ Extended hexdump is invented by Ange Albertini in
 [Corkami](https://github.com/angea/corkami/blob/master/src/HexII/braille/braille-ange)
 and implemented in [braille dump](https://justine.lol/braille/) by Justine Tunney.
 
-This implementation differs only in character used for NUL byte, as ▁ and ░ used
+This implementation differs only in the character used for NUL byte, as ▁ and ░ used
 by Justine and Ange are hard to count quickly: they are block characters, so
 consecutive NUL bytes in data become a continuous pattern. ▪ is perfectly suited
 for NUL.
