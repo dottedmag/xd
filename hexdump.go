@@ -99,7 +99,7 @@ func Fprint(w io.Writer, data []byte, offset int) (int, error) {
 	for lineStart := offset / 16 * 16; lineStart < offset+len(data); lineStart += 16 {
 		builder.Grow(7 * 16) // Reserve space for the whole line once
 		line(&builder, data, offset, lineStart)
-		n, err := fmt.Print(builder.String())
+		n, err := fmt.Fprint(w, builder.String())
 		if err != nil {
 			return written + n, err
 		}

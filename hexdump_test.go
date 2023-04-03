@@ -1,6 +1,7 @@
 package xd
 
 import (
+	"bytes"
 	"fmt"
 	"testing"
 )
@@ -82,5 +83,15 @@ func TestPartialLine(t *testing.T) {
 	act := Sprint([]byte{'1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E'}, 1)
 	if act != exp {
 		t.Errorf("Expected\n%q, got\n%q", exp, act)
+	}
+}
+
+func TestFprint(t *testing.T) {
+	const expected = "00000020  30 31 32 33 34 35 36 37  38 39 41 42 43 44 45 46  |0123456789ABCDEF|\n"
+
+	var buf bytes.Buffer
+	Fprint(&buf, []byte("0123456789ABCDEF"), 32)
+	if buf.String() != expected {
+		t.Errorf("Expected\n%q, got\n%q", expected, buf.String())
 	}
 }
